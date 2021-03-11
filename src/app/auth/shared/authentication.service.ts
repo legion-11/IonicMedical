@@ -1,5 +1,5 @@
 import { Injectable, NgZone } from '@angular/core';
-import { auth } from 'firebase/app';
+import firebase from 'firebase/app';
 import { User } from "./user";
 import { Router } from "@angular/router";
 import { AngularFireAuth } from "@angular/fire/auth";
@@ -9,6 +9,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
   providedIn: 'root'
 })
 export class AuthenticationService {
+  userData: any;
 
   constructor(
     public afStore: AngularFirestore,
@@ -30,17 +31,17 @@ export class AuthenticationService {
 
   // Login in with email/password
   SignIn(email, password) {
-    return this.ngFireAuth.auth.signInWithEmailAndPassword(email, password)
+    return this.ngFireAuth.signInWithEmailAndPassword(email, password)
   }
 
   // Register user with email/password
   RegisterUser(email, password) {
-    return this.ngFireAuth.auth.createUserWithEmailAndPassword(email, password)
+    return this.ngFireAuth.createUserWithEmailAndPassword(email, password)
   }
 
   // Email verification when new user register
   SendVerificationMail() {
-    return this.ngFireAuth.auth.currentUser.sendEmailVerification()
+    return this.ngFireAuth.currentUser.then(u => u.sendEmailVerification())
     .then(() => {
       this.router.navigate(['verify-email']);
     })
@@ -48,7 +49,7 @@ export class AuthenticationService {
 
   // Recover password
   PasswordRecover(passwordResetEmail) {
-    return this.ngFireAuth.auth.sendPasswordResetEmail(passwordResetEmail)
+    return this.ngFireAuth.sendPasswordResetEmail(passwordResetEmail)
     .then(() => {
       window.alert('Password reset email has been sent, please check your inbox.');
     }).catch((error) => {
@@ -70,12 +71,12 @@ export class AuthenticationService {
 
   // Sign in with Gmail
   GoogleAuth() {
-    return this.AuthLogin(new auth.GoogleAuthProvider());
+    return this.AuthLogin(new firebase.auth.GoogleAuthProvider());
   }
 
   // Auth providers
   AuthLogin(provider) {
-    return this.ngFireAuth.auth.signInWithPopup(provider)
+    return this.ngFireAuth.signInWithPopup(provider)
     .then((result) => {
        this.ngZone.run(() => {
           this.router.navigate(['dashboard']);
@@ -103,7 +104,7 @@ export class AuthenticationService {
 
   // Sign-out
   SignOut() {
-    return this.ngFireAuth.auth.signOut().then(() => {
+    return this.ngFireAuth.signOut().then(() => {
       localStorage.removeItem('user');
       this.router.navigate(['login']);
     })

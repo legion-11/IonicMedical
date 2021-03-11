@@ -21,7 +21,7 @@ export class RegisterPage implements OnInit {
     // this.authService.register(form.value).subscribe((res) => {
     //   this.router.navigateByUrl('home');
     // });
-    console.log("regiser")
+    console.log("regiser", form.value.password, form.confirm)
   }
 
 }
