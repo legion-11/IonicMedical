@@ -5,8 +5,7 @@
     align-items: center;
   }
   
-  
-  
+
   
   .login-header{
     background: var(--theme-color);
@@ -43,6 +42,22 @@
     text-align: center;
     
   }
+
+  .logo-img2{
+    display: block;
+    width: 60px;
+    margin: 0 auto;
+    text-align: center;
+    
+  }
+
+  .logo-img3{
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    
+  }
   
   [heading-column-lr] {
   display: flex;
@@ -55,6 +70,7 @@
   font-family: "Heebo-Bold" imp !important;
   font-size: 30px !important;
   color: var(--theme-black);
+  text-align: center;
   }
   
   [small-heading] {
@@ -107,6 +123,10 @@
   
   [linespace2] {
     height: 15px;
+  }
+
+  [linespace4] {
+    height: 190px;
   }
   
   
