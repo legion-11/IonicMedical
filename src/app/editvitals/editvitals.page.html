@@ -1,9 +1,94 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>editvitals</ion-title>
+  <ion-toolbar >
+    <ion-title class="ion-text-center">Patient 1</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/landing"></ion-back-button>
+    </ion-buttons>
+ 
+    <ion-buttons slot="end">
+      <ion-icon size="large" color="secondary" name="accessibility-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
 
+<ion-content>
+  <div class="center2">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+    <h3 big-heading>Measurement Made:</h3>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item class="ion-itemcolor">
+        <ion-label>h:mm a</ion-label>
+        <ion-datetime displayFormat="h:mm a"></ion-datetime>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+    <ion-item class="ion-itemcolor">
+      <ion-label position="floating">MM/DD/YYYY</ion-label>
+      <ion-datetime displayFormat="MM/DD/YYYY" min="1994-03-14" max="2012-12-09"></ion-datetime>
+    </ion-item>
+  </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+    <ion-item class="ion-itemcolor">
+      <ion-label position="floating">Measured By:</ion-label>
+      <ion-input></ion-input>
+    </ion-item>
+  </ion-col>
+  </ion-row>
+  <ion-row class="ion-itemcolor">
+    <ion-col>
+      <h1 big-heading>Add Vitals Measurements:</h1>
+    </ion-col>
+  </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item class="ion-itemcolor">
+          <ion-label position="stacked">Blood Pressure:</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-item class="ion-itemcolor">
+          <ion-label position="stacked">Respiratory Rate:</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>   
+     <ion-row>
+      <ion-col>
+        <ion-item class="ion-itemcolor">
+          <ion-label position="stacked">Blood Oxygen Level:</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>   
+     <ion-row>
+      <ion-col>
+        <ion-item class="ion-itemcolor"> 
+          <ion-label position="stacked">Heartbeat Rate:</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button  size="large" type="submit" expand="block">Save Vitals</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+
+
+  </div>
 </ion-content>
