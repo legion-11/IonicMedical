@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar >
+    <ion-title class="ion-text-center">Patients</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/landing"></ion-back-button>
+    </ion-buttons>
+
+    <ion-buttons slot="end">
+      <ion-icon size="large" color="secondary" name="add-circle"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-avatar slot="start" class="img-transparent">
+        <img src="assets/icon/favicon.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Name</h2>
+      </ion-label>
+      <h4>State</h4>
+    </ion-item>
+
+    <ion-item-sliding *ngFor="let term of yourArray;" (click)='openPatientData(term)'>
+      <ion-item>
+        <ion-avatar slot="start">
+          <img src="assets/icon/favicon.png">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{term.name}}</h2>
+        </ion-label>
+        <h4>critical</h4>
+      </ion-item>
+
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>

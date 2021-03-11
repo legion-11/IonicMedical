@@ -4,11 +4,11 @@ import { ToastController } from '@ionic/angular';
 import { AuthenticationService } from "../shared/authentication.service";
 
 @Component({
-  selector: 'app-forgot-password',
-  templateUrl: './forgot-password.page.html',
-  styleUrls: ['./forgot-password.page.scss'],
+  selector: 'app-forgotpassword',
+  templateUrl: './forgotpassword.page.html',
+  styleUrls: ['./forgotpassword.page.scss'],
 })
-export class ForgotPasswordPage implements OnInit {
+export class ForgotpasswordPage implements OnInit {
 
   constructor(
     public authService: AuthenticationService,
