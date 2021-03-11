@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from  "@angular/router";
+import { AuthenticationService } from "../shared/authentication.service";
 
 @Component({
   selector: 'app-register',
@@ -8,7 +9,10 @@ import { Router } from  "@angular/router";
 })
 export class RegisterPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(
+    public authService: AuthenticationService,
+    private router: Router
+    ) { }
 
   ngOnInit() {
   }

@@ -3,9 +3,32 @@ a{
 }
 
 ion-item{
-  --background: #3880ff;
+  --background: #005eff;
   --color: #fff;
 }
 ion-button{
   --background: #062f77;
+}
+
+#center-label {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.center-col {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+#borders {
+  border-color: black;
+  border-width: .01em;
+  border-style:solid;
+  background-color: lightgrey
 }
