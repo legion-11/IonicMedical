@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
   },
   {
+    path: 'addpatient',
+    loadChildren: () => import('./addpatient/addpatient.module').then( m => m.AddpatientPageModule)
+  },
+  {
     path: 'patients',
     loadChildren: () => import('./patients/patients.module').then( m => m.PatientsPageModule)
   },
@@ -42,7 +46,8 @@ const routes: Routes = [
   {
     path: 'forgotpassword',
     loadChildren: () => import('./auth/forgotpassword/forgotpassword.module').then( m => m.ForgotpasswordPageModule)
-  },  {
+  },
+  {
     path: 'listofcriticalpatients',
     loadChildren: () => import('./listofcriticalpatients/listofcriticalpatients.module').then( m => m.ListofcriticalpatientsPageModule)
   },

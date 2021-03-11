@@ -12,6 +12,11 @@ export class ListofpatientsPage implements OnInit {
     private router: Router,
     ) { }
 
+    
+  addpatient() {
+    this.router.navigate(['addpatient']);
+  }
+    
   ngOnInit() {
   }
 
