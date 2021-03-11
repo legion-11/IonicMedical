@@ -10,9 +10,12 @@ export class ListOfPatientsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    // TODO load from internet
   }
   yourArray = [
-    {name: "name", conditionGood: true}
+    {name: "Ferdinand Braun", conditionGood: true},
+    {name: "Rey", conditionGood: false},
+    {name: "Ferdinand Braun", conditionGood: true},
 
   ]
   openPatientData(data) {
