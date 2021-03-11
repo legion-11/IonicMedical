@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ViewPatientPage } from './view-patient.page';
+import { ViewPatientPage } from './viewpatient.page';
 
 const routes: Routes = [
   {

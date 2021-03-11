@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { ViewPatientPageRoutingModule } from './view-patient-routing.module';
+import { ViewPatientPageRoutingModule } from './viewpatient-routing.module';
 
-import { ViewPatientPage } from './view-patient.page';
+import { ViewPatientPage } from './viewpatient.page';
 
 @NgModule({
   imports: [
