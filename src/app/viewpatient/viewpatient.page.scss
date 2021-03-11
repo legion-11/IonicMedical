@@ -1,0 +1,179 @@
+#center-label {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  }
+  
+  .center3 {
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    -webkit-transform: translate(-49%, -49%);
+    transform: translate(-49%, -49%);
+    width: 90%;
+  }
+
+  
+  .login-header{
+    background: var(--theme-color);
+  }
+  
+  .login-header {
+  position: relative;
+  background: var(--theme-color);
+  border-radius: 0em;
+  }
+
+  .ion-button-class {
+    display: block;
+    width: 100%;
+  }
+  
+  .login-header:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: var(--theme-color);
+  border-bottom: 0;
+  margin-left: -15px;
+  margin-bottom: -15px;
+  }
+  .logo-img{
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+    
+  }
+
+  .logo-img2{
+    display: block;
+    width: 60px;
+    margin: 0 auto;
+    text-align: center;
+    
+  }
+
+  .logo-img3{
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    
+  }
+
+
+ 
+  
+  [heading-column-lr] {
+  display: flex;
+  -ms-flex-align: center;
+  align-items: center;
+  }
+  
+  [big-heading] {
+    
+  font-family: "Heebo-Bold" imp !important;
+  font-size: 30px !important;
+  color: var(--theme-black);
+  text-align: center;
+  }
+
+  [big-heading2] {
+    
+    font-family: "Heebo-Bold" imp !important;
+    font-size: 20px !important;
+    color: var(--theme-black);
+    }
+  
+  [small-heading] {
+  font-family: "Heebo-Regular" !important;
+  margin-left: auto; padding-right: 40px; font-size: 15px;
+  }
+
+  .txtgridtop {
+      color: red;
+      font-weight: bold;
+  }
+
+  .textgridcolor {
+      color: #000;
+  }
+  
+  ion-label {
+  color: #000;
+  opacity: .8;
+  font-size: 13px;
+  display: block;
+  }
+  
+  ion-content {
+  --background: #fafafa;
+  }
+  
+  [transparent] {
+  --background: transparent;
+  }
+  
+  ion-input {
+  --color: #000;
+  --padding-bottom: 15px;
+  --padding-top: 15px;
+  --padding-start: 5px;
+  font-size: 15px;
+  text-indent: 1px;
+  padding-left: 10px !important;
+  }
+  
+  [icon-small] {
+  width: 30px;
+  }
+  
+  ion-item {
+  --hightlight-color-focused: transparent;
+  --highlight-height: 0;
+  --highlight-color-invalid:#000;
+  --hightlight-color-valid:#ddd;
+  --min-height: 65px;
+  --padding-start: 0;
+  }
+
+  .ion-itemcolor {
+    --color: #000;
+    --background: #fafafa;
+  }
+  
+  [linespace] {
+  height: 30px;
+  
+  }
+  
+  [linespace2] {
+    height: 15px;
+  }
+
+  [linespace4] {
+    height: 190px;
+  }
+  
+  
+  
+  ion-label{
+  color: #000;
+  opacity: .8;
+  font-size: 13px;
+  display: block;
+  }
+  
+  .forgot-password {
+  color: #000;
+  font-size: 13px;
+  display: block;
+  text-align: right;
+  padding: 10px;
+  }

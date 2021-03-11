@@ -6,50 +6,112 @@
     </ion-buttons>
  
     <ion-buttons slot="end">
-      <ion-icon size="large" color="secondary" name="accessibility-outline"></ion-icon>
+      <ion-icon size="large" color="secondary" name="clipboard-outline"></ion-icon>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="center">
-    <ion-grid>
-      <ion-row>
+  <div class="center3">
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item class="ion-itemcolor">
+        <ion-label position="stacked">Room Number:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item class="ion-itemcolor">
+        <ion-label position="stacked">Address:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item class="ion-itemcolor">
+        <ion-label position="stacked">Phone Number:</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item class="ion-itemcolor">
+        <ion-label position="stacked">Patient Notes:</ion-label>
+        <ion-textarea rows="3" cols="20" 
+          disabled
+          readonly
+          value="Medication taken: ">
+        </ion-textarea>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <h2 big-heading2>Vitals:</h2>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-row class="txtgridtop">
+        <ion-col>Date Time</ion-col>
+        <ion-col>Vitals</ion-col>
+        <ion-col>Measurements</ion-col>
+      </ion-row>
+      <ion-row class="textgridcolor">
+        <ion-col>10/02/2021</ion-col>
+        <ion-col>Blood Pressure</ion-col>
+        <ion-col>148 / 80 mmHG</ion-col>
+      </ion-row>
+      <ion-row class="textgridcolor">
+        <ion-col></ion-col>
+        <ion-col>Respiratory Rate</ion-col>
+        <ion-col>20 / min</ion-col>
+      </ion-row>
+      <ion-row class="textgridcolor">
+        <ion-col></ion-col>
+        <ion-col>Blood Oxygen</ion-col>
+        <ion-col>99%</ion-col>
+      </ion-row>
+      <ion-row class="textgridcolor">
+        <ion-col></ion-col>
+        <ion-col>Heartbeat Rate:</ion-col>
+        <ion-col>90 / min</ion-col>
+      </ion-row>
+      <ion-row class="textgridcolor">
         <ion-col>
-
+          12/02/2021
+        </ion-col>
+        <ion-col>Blood Pressure</ion-col>
+        <ion-col>148 / 80 mmHG
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col>
-          
-        </ion-col>
+      <ion-row class="textgridcolor">
+        <ion-col></ion-col>
+        <ion-col>Respiratory Rate</ion-col>
+        <ion-col>20 / min</ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col>
-          
-        </ion-col>
+      <ion-row class="textgridcolor">
+        <ion-col></ion-col>
+        <ion-col>Blood Oxygen</ion-col>
+        <ion-col>99%</ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col>
-          
-        </ion-col>
+      <ion-row class="textgridcolor">
+        <ion-col></ion-col>
+        <ion-col>Heartbeat Rate:</ion-col>
+        <ion-col>90 / min</ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col>
-          
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
-
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button  size="large" type="submit" expand="block">Add Vitals</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</div>
 </ion-content>
