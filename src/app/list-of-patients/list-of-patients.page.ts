@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list-of-patients',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListOfPatientsPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
+
+  addpatient() {
+    this.route.navigate(['addpatient']);
+  }
+
 
   ngOnInit() {
     // TODO load from internet

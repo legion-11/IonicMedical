@@ -1,9 +1,82 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>addpatient</ion-title>
+  <ion-toolbar >
+    <ion-title class="ion-text-center">Add / Edit Patient</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/landing"></ion-back-button>
+    </ion-buttons>
+ 
+    <ion-buttons slot="end">
+      <ion-icon size="large" color="secondary" name="person-add-outline"></ion-icon>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="center3">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-item class="ion-itemcolor">
+            <ion-label position="stacked" >Patient ID:</ion-label>
+            <ion-input value="13124414"></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="ion-itemcolor">
+            <ion-label position="stacked">First Name:</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="ion-itemcolor">
+            <ion-label position="stacked">Last Name:</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="ion-itemcolor">
+            <ion-label position="stacked">Address:</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="ion-itemcolor">
+            <ion-label position="stacked">Phone Number:</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="ion-itemcolor">
+            <ion-label position="stacked">Room Number:</ion-label>
+            <ion-input></ion-input>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-item class="ion-itemcolor">
+            <ion-label position="stacked">Patient Notes:</ion-label>
+            <ion-textarea rows="4" cols="20" 
+              value="Medication Taken:">
+            </ion-textarea>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button  size="large" type="submit" expand="block" (click)="editvitals()">Add Vitals</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
