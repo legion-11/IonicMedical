@@ -30,9 +30,14 @@ const routes: Routes = [
   {
     path: 'forgot-password',
     loadChildren: () => import('./auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
-  },  {
+  },
+  {
     path: 'editvitals',
     loadChildren: () => import('./editvitals/editvitals.module').then( m => m.EditvitalsPageModule)
+  },
+  {
+    path: 'list-of-patients',
+    loadChildren: () => import('./list-of-patients/list-of-patients.module').then( m => m.ListOfPatientsPageModule)
   },
 
 
