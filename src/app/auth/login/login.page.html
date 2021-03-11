@@ -1,29 +1,44 @@
-<ion-content color="primary" padding >
-  <div class="center-col" >
+
+<ion-header no-border>
+  <div class="login-header ion-padding">
+      <img class="logo-img" src="assets/img/logo.png">
+  </div>
+</ion-header>
+
+
+
+
+<ion-content>
+  <div class="center">
     <form #form="ngForm" (ngSubmit)="login(form)">
       <ion-grid>
         <ion-row color="primary" justify-content-center >
           <ion-col align-self-center>
-            <div id="center-label">
-              <h3>Login</h3>
+           <div heading-column-lr>
+              <h1 big-heading >Login</h1>
             </div>
+            <div linespace2></div>
             <div padding>
-              <ion-item>
-                <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+              <ion-item transparent>
+                <img icon-small src="assets/img/user.png" />
+                <ion-input name="email" type="email" placeholder="Email" ngModel required></ion-input>
               </ion-item>
-              <ion-item>
+              <ion-item transparent>
+                <img icon-small src="assets/img/password.png" />
                 <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
               </ion-item>
             </div>
-            <div padding>
-              <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
+            <div>
+              <div linespace2></div>
+              <ion-button color="primary" class="ion-button-class" shape="round" fill="solid" size="large" [disabled]="form.invalid" expand="block">Login</ion-button>
             </div>
           </ion-col>
         </ion-row>
+        <div linespace></div>
         <ion-row>
           <ion-col align-self-center>
             <div id="center-label">
-              <a routerLink='/register'> If you don't have an account, please register first! </a>
+              <a class="link-button" routerLink='/register'> If you don't have an account, please register first! </a>
             </div>
           </ion-col>
         </ion-row>

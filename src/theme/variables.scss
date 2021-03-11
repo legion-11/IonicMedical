@@ -74,7 +74,93 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+  --theme-color: #ffce00;
+  --theme-black: #000000;
+  --theme-color-gray: #d7d8da;
+
+
+
+
 }
+
+:root[mode=ios],
+:root[mode=md] {
+  --ion-font-family: "Heebo-Regular" !important;
+  font-family: "Heebo-Regular", "Times New Roman", serif !important;
+}
+
+@font-face {
+  font-family: 'Heebo-Black';
+  src: url('../assets/fonts/Heebo/Heebo-Black.ttf');
+}
+
+@font-face {
+ font-family: 'Heebo-Bold';
+ src: url('../assets/fonts/Heebo/Heebo-Bold.ttf');
+}
+
+@font-face {
+ font-family: 'Heebo-ExtraBold';
+ src: url('../assets/fonts/Heebo/Heebo-ExtraBold.ttf');
+}
+
+@font-face {
+ font-family: 'Heebo-Light';
+ src: url('../assets/fonts/Heebo/Heebo-Light.ttf');
+}
+
+@font-face {
+ font-family: 'Heebo-Medium';
+ src: url('../assets/fonts/Heebo/Heebo-Medium.ttf');
+}
+
+@font-face {
+ font-family: 'Heebo-Regular';
+ src: url('../assets/fonts/Heebo/Heebo-Regular.ttf');
+}
+
+@font-face {
+ font-family: 'Heebo-Thin';
+ src: url('../assets/fonts/Heebo/Heebo-Thin.ttf');
+}
+
+
+
+
+@media (min-height:319px) {
+  .center {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    -webkit-transform: translate(-49%, -49%);
+    transform: translate(-49%, -49%);
+    width: 90%;
+  }
+}
+
+@media (min-height: 735px) {
+  .center {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    -webkit-transform: translate(-49%, -49%);
+    transform: translate(-49%, -49%);
+    width: 90%;
+  }
+}
+
+@media (min-height:812px) {
+  .center {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    -webkit-transform: translate(-49%, -49%);
+    transform: translate(-49%, -49%);
+    width: 90%;
+  }
+}
+
 
 @media (prefers-color-scheme: dark) {
   /*

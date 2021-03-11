@@ -1,42 +1,52 @@
-
-<ion-header>
-  <ion-toolbar>
-    <ion-buttons slot="start">
-      <ion-back-button defaultHref="/login"></ion-back-button>
-    </ion-buttons>
-    <ion-buttons slot="end">
-      <ion-menu-button menu="first"></ion-menu-button>
-    </ion-buttons>
-  </ion-toolbar>
+<ion-toolbar >
+  <ion-buttons slot="start">
+    <ion-back-button defaultHref="/login"></ion-back-button>
+  </ion-buttons>
+  <ion-buttons slot="end">
+    <ion-menu-button menu="first"></ion-menu-button>
+  </ion-buttons>
+</ion-toolbar>
+<ion-header no-border>
+  <div class="login-header ion-padding">
+      <img class="logo-img" src="assets/img/logo.png">
+  </div>
 </ion-header>
 
-<ion-content color="primary"  >
+
+
+
+<ion-content >
+
+  <div class="center">
     <form  #form="ngForm" (ngSubmit)="register(form)">
       <ion-grid class="container">
-        <ion-row color="primary" >
-          <ion-col size-md="6" size-lg="5" size-xs="12" >
+        <ion-row color="primary"  >
+          <ion-col size-md="6" size-lg="12" size-xs="12" >
+            <div linespace></div>
             <div id="center-label">
-              <h3>Create your account</h3>
+              <h3 big-heading>Create your account</h3>
             </div>
             <div padding>
-              <ion-item>
+              <ion-item transparent>
                 <ion-input  name="name" type="text" placeholder="Name" ngModel required></ion-input>
               </ion-item>
-              <ion-item>
+              <ion-item transparent>
                 <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
               </ion-item>
-              <ion-item>
+              <ion-item transparent>
                 <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
               </ion-item>
-              <ion-item>
+              <ion-item transparent>
                 <ion-input name="confirm" type="password" placeholder="Password again" ngModel required></ion-input>
               </ion-item>
             </div>
             <div padding>
+              <div linespace2></div>
               <ion-button  size="large" type="submit" [disabled]="form.invalid" expand="block">Register</ion-button>
             </div>
           </ion-col>
         </ion-row>
       </ion-grid>
     </form>
+  </div>
 </ion-content>
