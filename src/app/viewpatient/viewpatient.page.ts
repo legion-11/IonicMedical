@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-view-patient',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPatientPage implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
+
+  editvitals() {
+    this.route.navigate(['editvitals']);
+  }
 
   ngOnInit() {
   }
