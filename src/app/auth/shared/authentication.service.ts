@@ -42,19 +42,11 @@ export class AuthenticationService {
   // Email verification when new user register
   SendVerificationMail() {
     return this.ngFireAuth.currentUser.then(u => u.sendEmailVerification())
-    .then(() => {
-      this.router.navigate(['verify-email']);
-    })
   }
 
   // Recover password
   PasswordRecover(passwordResetEmail) {
     return this.ngFireAuth.sendPasswordResetEmail(passwordResetEmail)
-    .then(() => {
-      window.alert('Password reset email has been sent, please check your inbox.');
-    }).catch((error) => {
-      window.alert(error)
-    })
   }
 
   // Returns true when user is looged in

@@ -18,13 +18,18 @@ const routes: Routes = [
   {
     path: 'login',
     loadChildren: () => import('./auth/login/login.module').then( m => m.LoginPageModule)
-  },  {
+  },
+  {
     path: 'patients',
     loadChildren: () => import('./patients/patients.module').then( m => m.PatientsPageModule)
   },
   {
     path: 'landing',
     loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
+  },
+  {
+    path: 'forgot-password',
+    loadChildren: () => import('./auth/forgot-password/forgot-password.module').then( m => m.ForgotPasswordPageModule)
   },
 
 ];
