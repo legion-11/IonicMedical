@@ -51,7 +51,7 @@ export class LoginPage implements OnInit {
     this.authService.SignIn(form.value.email, form.value.password)
       .then((res) => {
         if(this.authService.isEmailVerified) {
-          this.router.navigate(['home']);
+          this.router.navigate(['landing']);
         } else {
           this.presentToastWithOptions()
           return false;
