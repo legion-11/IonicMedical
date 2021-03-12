@@ -11,9 +11,12 @@ export class LandingPage implements OnInit {
   constructor(private route: Router) { }
 
   listofpatients() {
-    this.route.navigate(['list-of-patients']);
+    this.route.navigate(['listofpatients']);
   }
 
+  listofcriticalpatients() {
+    this.route.navigate(['listofcriticalpatients']);
+  }
   ngOnInit() {
   }
 
