@@ -13,22 +13,27 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header>
-      <ion-avatar slot="start" >
+    <ion-item>
+      <ion-avatar slot="start" class="img-transparent">
         <img src="assets/icon/favicon.png">
       </ion-avatar>
-      <ion-label>Name</ion-label>
-      <ion-label>Condition</ion-label>
-    </ion-list-header>
+      <ion-label>
+        <h2>Name</h2>
+      </ion-label>
+      <h4>State</h4>
+    </ion-item>
 
     <ion-item-sliding *ngFor="let term of yourArray;" (click)='openPatientData(term)'>
-      <ion-item >
-        <ion-label>{{term.name}}</ion-label>
-        <ion-avatar  slot="start">
+      <ion-item>
+        <ion-avatar slot="start">
           <img src="assets/icon/favicon.png">
         </ion-avatar>
-        <ion-label >{{term.conditionGood ? "good": "critical"}}</ion-label>
+        <ion-label>
+          <h2>{{term.name}}</h2>
+        </ion-label>
+        <h4>{{term.conditionGood ? "good": "critical"}}</h4>
       </ion-item>
+
     </ion-item-sliding>
   </ion-list>
 </ion-content>

@@ -1,3 +1,9 @@
-.imgg {
-  opacity: 1;
+.img-transparent {
+  opacity: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
