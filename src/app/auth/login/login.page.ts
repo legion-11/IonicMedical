@@ -47,10 +47,10 @@ export class LoginPage implements OnInit {
     toast.present();
   }
 
-  login(form) {
-    this.authService.SignIn(form.value.email, form.value.password)
-      .then((res) => {
-        if(this.authService.isEmailVerified) {
+  async login(form) {
+    await this.authService.SignIn(form.value.email, form.value.password)
+    .then((res) => {
+        if(res.user.emailVerified) {
           this.router.navigate(['landing']);
         } else {
           this.presentToastWithOptions()

@@ -1,5 +1,7 @@
 {
   "name": "CMedical",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

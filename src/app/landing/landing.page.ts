@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthenticationService } from "../auth/shared/authentication.service";
 
 @Component({
   selector: 'app-landing',
@@ -8,7 +9,8 @@ import { Router } from '@angular/router';
 })
 export class LandingPage implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router,
+    public authService: AuthenticationService,) { }
 
   listofpatients() {
     this.route.navigate(['listofpatients']);
@@ -18,6 +20,10 @@ export class LandingPage implements OnInit {
     this.route.navigate(['listofcriticalpatients']);
   }
   ngOnInit() {
+  }
+
+  SignOut() {
+    this.authService.SignOut()
   }
 
 }

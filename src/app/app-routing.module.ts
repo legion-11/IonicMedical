@@ -24,10 +24,6 @@ const routes: Routes = [
     loadChildren: () => import('./addpatient/addpatient.module').then( m => m.AddpatientPageModule)
   },
   {
-    path: 'patients',
-    loadChildren: () => import('./patients/patients.module').then( m => m.PatientsPageModule)
-  },
-  {
     path: 'landing',
     loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
   },
