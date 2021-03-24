@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from  "@angular/router";
+import { FetchingService } from '../shared/fetching.service'
 
 @Component({
   selector: 'app-listofpatients',
@@ -9,25 +10,34 @@ import { Router } from  "@angular/router";
 export class ListofpatientsPage implements OnInit {
 
   constructor(
+    private fetching: FetchingService,
     private router: Router,
     ) { }
 
-    
+
   addpatient() {
     this.router.navigate(['addpatient']);
   }
-    
+
   ngOnInit() {
   }
 
-  yourArray = [
-    {name: "Ferdinand Braun", conditionGood: true},
-    {name: "Rey", conditionGood: false},
-    {name: "Ferdinand Braun", conditionGood: true},
-
-  ]
+  yourArray = []
   openPatientData(data) {
     // console.log(data)
     this.router.navigate(['/viewpatient', data]);
   }
+
+  ionViewWillEnter() {
+    this.fetching.GetPatients().subscribe(
+      (data: []) => {
+        this.yourArray = data
+      },
+      (err) => {
+        console.log(err)
+      }
+    )
+  }
+
+
 }
