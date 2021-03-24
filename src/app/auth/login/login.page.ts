@@ -13,7 +13,7 @@ export class LoginPage implements OnInit {
   constructor(
     public authService: AuthenticationService,
     private router: Router,
-    public toastController: ToastController
+    public toastController: ToastController,
     ) { }
 
   ngOnInit() {
