@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from  "@angular/router";
 import { FetchingService } from '../shared/fetching.service'
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-listofpatients',
@@ -12,6 +13,7 @@ export class ListofpatientsPage implements OnInit {
   constructor(
     private fetching: FetchingService,
     private router: Router,
+    public toastController: ToastController
     ) { }
 
 
@@ -35,9 +37,17 @@ export class ListofpatientsPage implements OnInit {
       },
       (err) => {
         console.log(err)
+        this.presentToast(err.message)
       }
     )
   }
 
+  async presentToast(mes: string) {
+    const toast = await this.toastController.create({
+      message: mes,
+      duration: 2000
+    });
+    toast.present();
+  }
 
 }
