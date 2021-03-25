@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 
 @Component({
@@ -8,14 +8,21 @@ import { Router } from '@angular/router';
   styleUrls: ['./viewpatient.page.scss'],
 })
 export class ViewPatientPage implements OnInit {
+  patientsData: any;
 
-  constructor(private route: Router) { }
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,) { }
 
   editvitals() {
-    this.route.navigate(['editvitals']);
+    this.router.navigate(['editvitals']);
   }
 
   ngOnInit() {
+    if (this.route.snapshot.data['special']) {
+      this.patientsData = this.route.snapshot.data['special'];
+      console.log(this.patientsData)
+    }
   }
 
 }

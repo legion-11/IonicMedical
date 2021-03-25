@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from  "@angular/router";
 import { FetchingService } from '../shared/fetching.service'
 import { ToastController } from '@ionic/angular';
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-listofpatients',
@@ -13,7 +14,8 @@ export class ListofpatientsPage implements OnInit {
   constructor(
     private fetching: FetchingService,
     private router: Router,
-    public toastController: ToastController
+    public toastController: ToastController,
+    private dataService: DataService,
     ) { }
 
 
@@ -26,8 +28,8 @@ export class ListofpatientsPage implements OnInit {
 
   yourArray = []
   openPatientData(data) {
-    // console.log(data)
-    this.router.navigate(['/viewpatient', data]);
+    this.dataService.setData(data._id, data);
+    this.router.navigate(['/viewpatient/' + data._id]);
   }
 
   ionViewWillEnter() {

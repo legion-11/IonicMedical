@@ -11,5 +11,7 @@ export class AddpatientPage implements OnInit {
 
   ngOnInit() {
   }
+  editvitals(){
 
+  }
 }
