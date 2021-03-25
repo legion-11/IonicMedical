@@ -28,6 +28,7 @@
     "cordova-plugin-advanced-http": "^3.1.0",
     "cordova-plugin-file": "^6.0.2",
     "firebase": "^8.3.0",
+    "globalthis": "^1.0.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
