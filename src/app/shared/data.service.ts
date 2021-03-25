@@ -4,15 +4,15 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataService {
-  private data = [];
+  private patientsData = [];
   constructor() { }
 
-  setData(id, data) {
-    this.data[id] = data;
+  setPatientsData(id, data) {
+    this.patientsData[id] = data;
   }
 
-  getData(id) {
-    return this.data[id];
+  getPatientsData(id) {
+    return this.patientsData[id];
   }
 
 }

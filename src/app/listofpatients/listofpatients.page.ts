@@ -28,7 +28,7 @@ export class ListofpatientsPage implements OnInit {
 
   yourArray = []
   openPatientData(data) {
-    this.dataService.setData(data._id, data);
+    this.dataService.setPatientsData(data._id, data);
     this.router.navigate(['/viewpatient/' + data._id]);
   }
 
