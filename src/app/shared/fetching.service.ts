@@ -7,34 +7,38 @@ import { Observable } from 'rxjs';
 })
 export class FetchingService {
 
-  url = 'https://patientrecordsgroup.herokuapp.com';
+  baseUrl = 'https://patientrecordsgroup.herokuapp.com';
 
   constructor(
     private http: HttpClient,
   ) { }
 
   GetPatients(): Observable<object> {
-    return this.http.get(this.url + '/patients');
+    return this.http.get(this.baseUrl + '/patients');
   }
 
   GetVitals(patientId): Observable<object> {
-    return this.http.get(this.url + `/patients/${patientId}/records`);
+    return this.http.get(this.baseUrl + `/patients/${patientId}/records`);
   }
 
   AddVital(patientId, vitalId, data) {
-    this.http.put(this.url + `/patients/${patientId}/records/${vitalId}`, data);
+    return this.http.put(this.baseUrl + `/patients/${patientId}/records/${vitalId}`, data);
   }
 
   DeleteVital(patientId, vitalId) {
-    this.http.delete(this.url + `/patients/${patientId}/records/${vitalId}`);
+    return this.http.delete(this.baseUrl + `/patients/${patientId}/records/${vitalId}`);
   }
 
-  AddPatient(patientId, data) {
-    this.http.put(this.url + `/patients/${patientId}`, data);
+  EditPatient(data) {
+    return this.http.post(this.baseUrl + `/patients/${data._id}`, data);
+  }
+
+  AddPatient(data) {
+    return this.http.post(this.baseUrl + `/patients`, data);
   }
 
   DeletePatient(patientId) {
-    this.http.delete(this.url + `/patients/${patientId}`);
+    return this.http.delete(this.baseUrl + `/patients/${patientId}`);
   }
 
 }

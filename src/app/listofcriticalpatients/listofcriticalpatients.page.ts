@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from  "@angular/router";
 import { FetchingService } from '../shared/fetching.service'
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-listofcriticalpatients',
@@ -12,6 +13,7 @@ export class ListofcriticalpatientsPage implements OnInit {
   constructor(
     private fetching: FetchingService,
     private router: Router,
+    private dataService: DataService,
     ) { }
 
   ngOnInit() {
@@ -20,8 +22,8 @@ export class ListofcriticalpatientsPage implements OnInit {
   yourArray = [
   ]
   openPatientData(data) {
-    // console.log(data)
-    this.router.navigate(['/viewpatient', data]);
+    this.dataService.setPatientsData(data._id, data);
+    this.router.navigate(['/viewpatient/' + data._id]);
   }
 
   ionViewWillEnter() {
