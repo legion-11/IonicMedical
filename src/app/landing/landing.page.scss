@@ -21,6 +21,17 @@
     display: block;
     width: 100%;
   }
+
+  
+  
+    .center2 {
+      position: absolute;
+      left: 50%;
+      top: 30%;
+      -webkit-transform: translate(-49%, -49%);
+      transform: translate(-49%, -49%);
+      width: 90%;
+    }
   
   .login-header:after {
   content: '';
