@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class FetchingService {
 
   baseUrl = 'https://patientrecordsgroup.herokuapp.com';
+  // baseUrl = 'http://127.0.0.1:3009';
 
   constructor(
     private http: HttpClient,
@@ -30,11 +31,17 @@ export class FetchingService {
   }
 
   EditPatient(data) {
-    return this.http.post(this.baseUrl + `/patients/${data._id}`, data);
+    console.log('post editpatients');
+    return this.http.put(this.baseUrl + `/patients/${data._id}`, data);
   }
 
   AddPatient(data) {
-    return this.http.post(this.baseUrl + `/patients`, data);
+    console.log('post addpatients');
+    // let headers = new HttpHeaders();
+    // headers = headers.append('token', 'someToken');
+    // headers = headers.append('Content-Type', 'application/json');
+    // headers = headers.append("Accept", 'application/json');
+    return this.http.post(this.baseUrl + "/patients", data);
   }
 
   DeletePatient(patientId) {

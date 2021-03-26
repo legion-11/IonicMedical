@@ -10,14 +10,14 @@ import { AuthenticationService } from "../auth/shared/authentication.service";
 })
 export class AddpatientPage implements OnInit {
   patient = {
-    _id: "",
-    name: "",
-    address: "",
+    _id: undefined,
+    name: "фффффффф",
+    address: "фффф",
     in_critical_condition: false,
     notes: "Medication:\n",
     phone_number: "",
     room: "",
-    user_id: this.authService.userData.uid,
+    user_id: "this.authService.userData.uid",
   }
 
   constructor(
@@ -32,9 +32,8 @@ export class AddpatientPage implements OnInit {
     }
   }
   addEditPatient(){
+    console.log(this.patient._id)
     var result = (this.patient._id === undefined) ? this.fetching.AddPatient(this.patient) : this.fetching.EditPatient(this.patient)
-
-
     result.subscribe(
       (data) => {
         console.log(data)
