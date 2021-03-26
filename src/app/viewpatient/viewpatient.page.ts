@@ -8,7 +8,17 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./viewpatient.page.scss'],
 })
 export class ViewPatientPage implements OnInit {
-  patientsData: any;
+  patient = {
+    _id: undefined,
+    name: "",
+    address: "1212",
+    in_critical_condition: false,
+    notes: "",
+    phone_number: "",
+    room: "",
+    // todo uncomment
+    user_id: "",
+  }
 
   constructor(
     private router: Router,
@@ -20,8 +30,8 @@ export class ViewPatientPage implements OnInit {
 
   ngOnInit() {
     if (this.route.snapshot.data['special']) {
-      this.patientsData = this.route.snapshot.data['special'];
-      console.log(this.patientsData)
+      this.patient = this.route.snapshot.data['special'];
+      console.log(this.patient)
     }
   }
 

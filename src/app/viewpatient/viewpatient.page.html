@@ -1,10 +1,10 @@
 <ion-header>
   <ion-toolbar >
-    <ion-title class="ion-text-center">Patient 1</ion-title>
+    <ion-title class="ion-text-center">{{patient.name}}</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/landing"></ion-back-button>
+      <ion-back-button defaultHref="/listofpatients"></ion-back-button>
     </ion-buttons>
- 
+
     <ion-buttons slot="end">
       <ion-icon size="large" color="secondary" name="clipboard-outline"></ion-icon>
     </ion-buttons>
@@ -18,7 +18,7 @@
     <ion-col>
       <ion-item class="ion-itemcolor">
         <ion-label position="stacked">Room Number:</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)] = "patient.room"></ion-input>
       </ion-item>
     </ion-col>
   </ion-row>
@@ -26,7 +26,7 @@
     <ion-col>
       <ion-item class="ion-itemcolor">
         <ion-label position="stacked">Address:</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)] = "patient.address"></ion-input>
       </ion-item>
     </ion-col>
   </ion-row>
@@ -34,7 +34,7 @@
     <ion-col>
       <ion-item class="ion-itemcolor">
         <ion-label position="stacked">Phone Number:</ion-label>
-        <ion-input></ion-input>
+        <ion-input [(ngModel)] = "patient.phone_number"></ion-input>
       </ion-item>
     </ion-col>
   </ion-row>
@@ -42,10 +42,10 @@
     <ion-col>
       <ion-item class="ion-itemcolor">
         <ion-label position="stacked">Patient Notes:</ion-label>
-        <ion-textarea rows="3" cols="20" 
+        <ion-textarea rows="3" cols="20"
           disabled
           readonly
-          value="Medication taken: ">
+          [(ngModel)] = "patient.notes">
         </ion-textarea>
       </ion-item>
     </ion-col>

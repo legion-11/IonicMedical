@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FetchingService } from '../shared/fetching.service'
 import { AuthenticationService } from "../auth/shared/authentication.service";
+import { DataService } from '../shared/data.service';
 
 @Component({
   selector: 'app-addpatient',
@@ -11,12 +12,13 @@ import { AuthenticationService } from "../auth/shared/authentication.service";
 export class AddpatientPage implements OnInit {
   patient = {
     _id: undefined,
-    name: "фффффффф",
-    address: "фффф",
+    name: "",
+    address: "",
     in_critical_condition: false,
     notes: "Medication:\n",
     phone_number: "",
     room: "",
+    // todo uncomment
     user_id: "this.authService.userData.uid",
   }
 
@@ -24,6 +26,8 @@ export class AddpatientPage implements OnInit {
     private fetching: FetchingService,
     public authService: AuthenticationService,
     private route: ActivatedRoute,
+    private dataService: DataService,
+    private router: Router,
     ) { }
 
   ngOnInit() {
@@ -35,8 +39,10 @@ export class AddpatientPage implements OnInit {
     console.log(this.patient._id)
     var result = (this.patient._id === undefined) ? this.fetching.AddPatient(this.patient) : this.fetching.EditPatient(this.patient)
     result.subscribe(
-      (data) => {
+      (data: any) => {
         console.log(data)
+        this.dataService.setPatientsData(data._id, data);
+        this.router.navigate(['/viewpatient/' + data._id]);
       },
       (err) => {
         console.log(err)
