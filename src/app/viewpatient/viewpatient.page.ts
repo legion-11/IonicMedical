@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FetchingService } from '../shared/fetching.service'
+import { ToastController } from '@ionic/angular';
 
 
 @Component({
@@ -11,7 +13,7 @@ export class ViewPatientPage implements OnInit {
   patient = {
     _id: undefined,
     name: "",
-    address: "1212",
+    address: "",
     in_critical_condition: false,
     notes: "",
     phone_number: "",
@@ -20,9 +22,14 @@ export class ViewPatientPage implements OnInit {
     user_id: "",
   }
 
+  vitalsList: any[]
+
   constructor(
+    private fetching: FetchingService,
     private router: Router,
-    private route: ActivatedRoute,) { }
+    private route: ActivatedRoute,
+    public toastController: ToastController,
+    ) { }
 
   editvitals() {
     this.router.navigate(['editvitals']);
@@ -35,4 +42,25 @@ export class ViewPatientPage implements OnInit {
     }
   }
 
+  ionViewWillEnter() {
+    this.fetching.GetVitals(this.patient._id).subscribe(
+      (data: []) => {
+        this.vitalsList = data
+        console.log(data);
+
+      },
+      (err) => {
+        console.log(err)
+        this.presentToast(err.message)
+      }
+    )
+  }
+  async presentToast(mes: string) {
+    const toast = await this.toastController.create({
+      message: mes,
+      duration: 2000
+    });
+    toast.present();
+  }
+  openVitalsData(data) {}
 }
