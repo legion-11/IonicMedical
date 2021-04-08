@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { DataResolverService } from './shared/data-resolver.service';
 
+
 const routes: Routes = [
   {
     path: 'home',
@@ -12,6 +13,13 @@ const routes: Routes = [
     redirectTo: 'login',
     pathMatch: 'full'
   },
+  
+
+
+
+
+
+
   {
     path: 'register',
     loadChildren: () => import('./auth/register/register.module').then( m => m.RegisterPageModule)
@@ -29,7 +37,10 @@ const routes: Routes = [
     loadChildren: () => import('./landing/landing.module').then( m => m.LandingPageModule)
   },
   {
-    path: 'editvitals',
+    path: 'editvitals/:id',
+    resolve: {
+      special: DataResolverService
+    },
     loadChildren: () => import('./editvitals/editvitals.module').then( m => m.EditvitalsPageModule)
   },
   {

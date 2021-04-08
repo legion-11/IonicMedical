@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { FetchingService } from '../shared/fetching.service'
 import { ToastController } from '@ionic/angular';
+import { DataService } from '../shared/data.service';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ToastController } from '@ionic/angular';
 })
 export class ViewPatientPage implements OnInit {
   patient = {
-    _id: undefined,
+    _id: "",
     name: "",
     address: "",
     in_critical_condition: false,
@@ -29,11 +30,19 @@ export class ViewPatientPage implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     public toastController: ToastController,
+    private dataService: DataService,
     ) { }
 
+
+
+    
+
+/*
   editvitals() {
-    this.router.navigate(['editvitals']);
+    this.router.navigate(['editvitals/:id']);
   }
+
+*/
 
   ngOnInit() {
     if (this.route.snapshot.data['special']) {
@@ -41,6 +50,27 @@ export class ViewPatientPage implements OnInit {
       console.log(this.patient)
     }
   }
+
+
+  yourArray = []
+  openPatientData(data) {
+    console.log(this.patient._id)
+    var result = (this.patient._id === undefined) ? this.fetching.AddPatient(this.patient) : this.fetching.EditPatient(this.patient)
+    result.subscribe(
+      (data: any) => {
+        console.log(data)
+        this.dataService.setPatientsData(data._id, data);
+        this.router.navigate(['/editvitals/' + data._id]);
+      },
+      (err) => {
+        console.log(err)
+      },
+
+    )
+   
+  }
+
+
 
   ionViewWillEnter() {
     this.fetching.GetVitals(this.patient._id).subscribe(
@@ -55,6 +85,9 @@ export class ViewPatientPage implements OnInit {
       }
     )
   }
+
+
+
   async presentToast(mes: string) {
     const toast = await this.toastController.create({
       message: mes,
@@ -64,3 +97,5 @@ export class ViewPatientPage implements OnInit {
   }
   openVitalsData(data) {}
 }
+
+

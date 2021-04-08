@@ -13,8 +13,11 @@ export class DataResolverService implements Resolve<any> {
     let id = route.paramMap.get('id');
     const segment = route.url[0].path;
     switch (segment) {
+      case 'editvitals' : return this.dataService.getPatientsData(id);
       case 'viewpatient' : return this.dataService.getPatientsData(id);
+      
       default: return;
+      
     }
   }
 }

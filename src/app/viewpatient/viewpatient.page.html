@@ -73,7 +73,7 @@
                 </ion-row>
                 <ion-row *ngIf="term.respiratoryRate!==''">
                   <ion-col>Respiratory Rate</ion-col>
-                  <ion-col>{{term.bloodPresure}} / min</ion-col>
+                  <ion-col>{{term.respiratoryRate}} / min</ion-col>
                 </ion-row>
                 <ion-row *ngIf="term.bloodOxigen!==''">
                   <ion-col>Blood Oxygen</ion-col>
@@ -91,7 +91,7 @@
 
       <ion-row>
         <ion-col>
-          <ion-button  size="large" type="submit" expand="block" (click)="editvitals()">Add Vitals</ion-button>
+          <ion-button  size="large" type="submit" expand="block" (click)="openPatientData()">Add Vitals</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

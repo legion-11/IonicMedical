@@ -5,6 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class DataService {
   private patientsData = [];
+
+  //vitals data
+  private vitalsData = [];
+
   constructor() { }
 
   setPatientsData(id, data) {
@@ -14,5 +18,14 @@ export class DataService {
   getPatientsData(id) {
     return this.patientsData[id];
   }
+
+  setVitalsData(id, data) {
+    this.vitalsData[id] = data;
+  }
+
+  getVitalsData(id) {
+    return this.vitalsData[id];
+  }
+
 
 }

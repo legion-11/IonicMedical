@@ -30,6 +30,7 @@ export class ListofpatientsPage implements OnInit {
   openPatientData(data) {
     this.dataService.setPatientsData(data._id, data);
     this.router.navigate(['/viewpatient/' + data._id]);
+   
   }
 
   ionViewWillEnter() {
