@@ -23,7 +23,7 @@ export class FetchingService {
   }
 
   AddVitals(patientId, data) {
-    return this.http.put(this.baseUrl + `/patients/${patientId}/records`, data);
+    return this.http.post(this.baseUrl + `/patients/${patientId}/records`, data);
   }
 
   AddVital(patientId, vitalId, data) {

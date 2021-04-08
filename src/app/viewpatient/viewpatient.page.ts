@@ -35,14 +35,15 @@ export class ViewPatientPage implements OnInit {
 
 
 
-    
+    async presentToastDelete() {
+      const toast = await this.toastController.create({
+        message: 'Patient was successfully deleted',
+        duration: 4000
+      });
+      toast.present();
+    }
 
-/*
-  editvitals() {
-    this.router.navigate(['editvitals/:id']);
-  }
 
-*/
 
   ngOnInit() {
     if (this.route.snapshot.data['special']) {
@@ -70,7 +71,12 @@ export class ViewPatientPage implements OnInit {
    
   }
 
-
+  deletePatient() {
+    this.fetching.DeletePatient(this.patient._id).subscribe();
+    this.presentToastDelete();
+    this.router.navigate(['/listofpatients']);
+  }
+  
 
   ionViewWillEnter() {
     this.fetching.GetVitals(this.patient._id).subscribe(
