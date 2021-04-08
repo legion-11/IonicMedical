@@ -50,11 +50,6 @@ export class EditvitalsPage implements OnInit {
 
   ) {
 
-    this.route.queryParams.subscribe(params => {
-      if (this.router.getCurrentNavigation().extras.state) {
-        this.data = this.router.getCurrentNavigation().extras.state.patient._id;
-      }
-    });
 
    }
 

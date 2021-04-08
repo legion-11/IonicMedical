@@ -3,7 +3,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { ForgotpasswordPage } from './forgotpassword.page';
 
-describe('ForgotpasswordPage', () => {
+xdescribe('ForgotpasswordPage', () => {
   let component: ForgotpasswordPage;
   let fixture: ComponentFixture<ForgotpasswordPage>;
 
@@ -18,7 +18,7 @@ describe('ForgotpasswordPage', () => {
     fixture.detectChanges();
   }));
 
-  it('should create', () => {
+  it('Firebase Authentication', () => {
     expect(component).toBeTruthy();
   });
 });
